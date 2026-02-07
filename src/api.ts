@@ -1,9 +1,12 @@
 import { User } from './types'
 
-const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:4000'
+// By default use same-origin requests (no localhost access from deployed site).
+// Set `VITE_API_BASE` in your deployment environment to point to an external API.
+const API_BASE = import.meta.env.VITE_API_BASE || ''
 
 async function request(path: string, opts: RequestInit = {}) {
-  const res = await fetch(API_BASE + path, {
+  const url = API_BASE ? API_BASE.replace(/\/$/, '') + path : path
+  const res = await fetch(url, {
     headers: { 'Content-Type': 'application/json' },
     ...opts
   })

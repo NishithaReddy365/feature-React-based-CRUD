@@ -37,5 +37,5 @@ The `UserForm` reads the schema and will render the new field automatically. The
 Assumptions / design decisions
 
 - Uses a schema-driven `UserForm` so adding fields is a one-line change to the `schema` array.
-- Uses `json-server` as a mock API; replace `VITE_API_BASE` to point to a real API if provided.
+ - When deployed, the app no longer defaults to contacting `http://localhost:4000` (which triggers browser "local network" permission prompts). To connect to an external API, set the `VITE_API_BASE` environment variable in your deployment (for example `https://api.example.com`). If you run the mock locally with `npm run mock-api`, set `VITE_API_BASE=http://localhost:4000` for local testing.
 - Minimal styling with CSS and MUI included (for future enhancement).

@@ -1,3 +1,12 @@
 {
-  "users": []
+  "users": [
+    {
+      "firstName": "honey",
+      "lastName": "7",
+      "phone": "2345678767",
+      "email": "honeypie@gmail.com",
+      "countryCode": "+1",
+      "id": 1
+    }
+  ]
 }
